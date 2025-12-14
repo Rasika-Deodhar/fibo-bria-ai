@@ -6,8 +6,12 @@ import os
 import httpx
 import base64
 import io
+from dotenv import load_dotenv
 
 app = FastAPI()
+
+# Load environment variables from .env file
+load_dotenv()  # loads backend/.env (or project-root .env)
 
 # Enable CORS so your React app can communicate with this API
 app.add_middleware(
